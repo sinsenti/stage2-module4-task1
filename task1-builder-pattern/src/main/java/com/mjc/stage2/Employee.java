@@ -6,69 +6,104 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 public class Employee {
-    private String name;
-    private String lastName;
-    private String position;
-    private String phone;
-    private String email;
-    private String carNumber;
+  private String name;
+  private String lastName;
+  private String position;
+  private String phone;
+  private String email;
+  private String carNumber;
 
-    public Employee() {
+  public Employee() {
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public String getPosition() {
+    return position;
+  }
+
+  public void setPosition(String position) {
+    this.position = position;
+  }
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getCarNumber() {
+    return carNumber;
+  }
+
+  public void setCarNumber(String carNumber) {
+    this.carNumber = carNumber;
+  }
+
+  public static EmployeeBuilder getBuilder() {
+    return new EmployeeBuilder();
+  }
+
+  public static class EmployeeBuilder {
+    private Employee emp;
+
+    public EmployeeBuilder() {
+      emp = new Employee();
     }
 
-    public String getName() {
-        return name;
+    public EmployeeBuilder setName(String name) {
+      emp.name = name;
+      return this;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public EmployeeBuilder setLastName(String lastName) {
+      emp.lastName = lastName;
+      return this;
     }
 
-    public String getLastName() {
-        return lastName;
+    public EmployeeBuilder setPosition(String position) {
+      emp.position = position;
+      return this;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public EmployeeBuilder setPhone(String phone) {
+      emp.phone = phone;
+      return this;
     }
 
-    public String getPosition() {
-        return position;
+    public EmployeeBuilder setEmail(String email) {
+      emp.email = email;
+      return this;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public EmployeeBuilder setCarNumber(String carNumber) {
+      emp.carNumber = carNumber;
+      return this;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCarNumber() {
-        return carNumber;
-    }
-
-    public void setCarNumber(String carNumber) {
-        this.carNumber = carNumber;
-    }
-
-    public static EmployeeBuilder getBuilder() {
-        return new EmployeeBuilder();
-    }
-
-    public static class EmployeeBuilder {
-        // Write your code here!
-    }
+  }
 }
